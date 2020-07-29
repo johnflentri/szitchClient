@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Route } from "react-router";
 import Homepage from './components/Homepage';
-import Newsfeed from './components/Newsfeed';
+import Profile from './components/Profile';
 import Toolbar from './components/toolbar/Toolbar'
 import SideDrawer from './components/SideDrawer/SideDrawer'
 import Backdrop from './components/Backdrop/Backdrop'
@@ -34,7 +34,7 @@ class App extends Component {
         {backdrop}
         <main style={{ marginTop: '64px' }}>
           <Route path='/' exact component={Homepage} />
-          <Route path='/newsfeed' component={Newsfeed} />
+          <Route path='/user/:id' component={Profile} />
         </main>
       </div>
     )
