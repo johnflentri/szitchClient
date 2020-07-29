@@ -9,7 +9,6 @@ class Profile extends Component {
   }
 
   render() {
-    console.log("whatup", this.props)
     const userId = parseInt(this.props.match.params.id)
     const accuracyPercent = this.props.currentUser.user.accuracyPercent
     const reactionTime = this.props.currentUser.user.reactionTime
