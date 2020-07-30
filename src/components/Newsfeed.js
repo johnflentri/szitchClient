@@ -16,7 +16,6 @@ class Newsfeed extends Component {
     return (
       <div className="centerDefault">
         <h3 className="pageHeading">Newsfeed</h3>
-        <h4 style={{ textAlign: "center" }}><Link to={`/user/${this.props.currentUser.user.id}`}>My Profile</Link></h4>
       </div>
     )
   }
