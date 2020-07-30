@@ -3,6 +3,7 @@ import request from 'superagent'
 
 export const LOGGED_IN = "LOGGED_IN"
 export const CURRENT_USER = 'CURRENT_USER'
+export const USER_PROFILES = 'USER_PROFILES'
 
 export const baseUrl = 'http://localhost:4000'
 
@@ -45,3 +46,24 @@ export const getCurrentUser = () => (dispatch, getState) => {
       dispatch(action);
     });
 };
+
+function allUserProfiles(payload) {
+  return {
+    type: USER_PROFILES,
+    payload
+  }
+}
+
+export const getUserProfiles = () => (dispatch, getState) => {
+  const state = getState()
+  const { userProfiles, user } = state
+  if (!userProfiles) {
+    request(`${baseUrl}/user`)
+      .set('Authorization', `Bearer ${user.jwt}`)
+      .then(response => {
+        const action = allUserProfiles(response.body)
+        dispatch(action)
+      })
+      .catch(console.error)
+  }
+}

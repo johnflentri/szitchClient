@@ -8,6 +8,7 @@ class Profile extends Component {
   }
 
   render() {
+    console.log("Profile page props", this.props)
     if (!this.props.currentUser) {
       return <div>Loading...</div>
     }
