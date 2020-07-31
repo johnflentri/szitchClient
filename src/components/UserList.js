@@ -25,7 +25,7 @@ class UserList extends Component {
 
     return (
       <div className="centerDefault">
-        <h3 className="pageHeading">User Profiles</h3>
+        <h3 className="pageHeading">1 vs. 1</h3>
         {mappedUsers}
       </div>
     )

@@ -9,7 +9,7 @@ import Backdrop from './components/Backdrop/Backdrop'
 import LogoutSuccess from './components/LogoutSuccess';
 import Events from './components/Events';
 import Matches from './components/Matches';
-import Streamers from './components/Streamers';
+import Streams from './components/Streams';
 
 class App extends Component {
   state = {
@@ -44,7 +44,7 @@ class App extends Component {
           <Route path='/logout' component={LogoutSuccess} />
           <Route path='/events' component={Events} />
           <Route path='/matches' component={Matches} />
-          <Route path='/streamers' component={Streamers} />
+          <Route path='/streams' component={Streams} />
         </main>
       </div>
     )

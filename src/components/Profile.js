@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux";
 import { getCurrentUser } from "../actions";
+import { Link } from "react-router-dom";
+import UserList from './UserList';
 
 class Profile extends Component {
   componentDidMount() {
@@ -19,10 +21,20 @@ class Profile extends Component {
     const gamerTag = currentProfile.username
     return (
       <div className="centerDefault">
+        <div className="page_navigation-items">
+          <ul>
+            <li><Link to={`/`}>Explore</Link></li>
+            <li><Link to={`/user/${this.props.currentUser.user.id}`}>My Profile</Link></li>
+            <li><Link to={`/events`}>Events</Link></li>
+            <li><Link to={`/matches`}>Matches</Link></li>
+            <li><Link to={`/streams`}>Streams</Link></li>
+          </ul>
+        </div>
         <h3 className="pageHeading">My Profile</h3>
         <p>Gamertag: {gamerTag}</p>
         <p>Accuracy: {accuracyPercent}%</p>
         <p>KDR: {killDeathRatio}</p>
+        <UserList />
       </div>
     );
   }

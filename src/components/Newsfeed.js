@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import ReactPlayer from 'react-player'
+// import ReactPlayer from 'react-player'
 
 import { getCurrentUser } from "../actions";
 
@@ -26,14 +26,14 @@ class Newsfeed extends Component {
       <div className="centerDefault">
         <div className="page_navigation-items">
           <ul>
+            <li><Link to={`/`}>Explore</Link></li>
             <li><Link to={`/user/${this.props.currentUser.user.id}`}>My Profile</Link></li>
-            <li><Link to={`/userlist`}>1v1!</Link></li>
             <li><Link to={`/events`}>Events</Link></li>
             <li><Link to={`/matches`}>Matches</Link></li>
-            <li><Link to={`/streamers`}>For Streamers</Link></li>
+            <li><Link to={`/streams`}>Streams</Link></li>
           </ul>
         </div>
-        <br />
+        <h3 className="pageHeading">Explore</h3>
         <p>Trending content for you - <Link>Click here for more!</Link></p>
         {/* <ReactPlayer
           url="https://www.youtube.com/watch?v=XDCja2ckJCg"
