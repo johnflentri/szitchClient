@@ -9,8 +9,6 @@ class UserList extends Component {
   }
 
   render() {
-    console.log("UserList props", this.props)
-
     if (!this.props.userList) {
       return <div>Loading...</div>
     }
@@ -35,7 +33,6 @@ class UserList extends Component {
 }
 
 const mapStateToProps = state => ({
-  // userList: state.userList
   userList: state.user.currentUser.users
 });
 

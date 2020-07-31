@@ -6,6 +6,10 @@ import UserList from './components/UserList';
 import Toolbar from './components/toolbar/Toolbar'
 import SideDrawer from './components/SideDrawer/SideDrawer'
 import Backdrop from './components/Backdrop/Backdrop'
+import LogoutSuccess from './components/LogoutSuccess';
+import Events from './components/Events';
+import Matches from './components/Matches';
+import Streamers from './components/Streamers';
 
 class App extends Component {
   state = {
@@ -33,10 +37,14 @@ class App extends Component {
         <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
         <SideDrawer show={this.state.sideDrawerOpen} />
         {backdrop}
-        <main style={{ marginTop: '64px' }}>
+        <main>
           <Route path='/' exact component={Homepage} />
           <Route path='/user/:id' component={Profile} />
           <Route path='/userlist' component={UserList} />
+          <Route path='/logout' component={LogoutSuccess} />
+          <Route path='/events' component={Events} />
+          <Route path='/matches' component={Matches} />
+          <Route path='/streamers' component={Streamers} />
         </main>
       </div>
     )

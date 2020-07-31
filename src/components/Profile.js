@@ -8,14 +8,15 @@ class Profile extends Component {
   }
 
   render() {
-    console.log("Profile page props", this.props)
     if (!this.props.currentUser) {
       return <div>Loading...</div>
     }
-    const currentUser = (this.props.currentUser.user)
-    const accuracyPercent = currentUser.accuracyPercent
-    const killDeathRatio = currentUser.killDeathRatio
-    const gamerTag = currentUser.username
+
+    const userId = parseInt(this.props.match.params.id)
+    const currentProfile = this.props.currentUser.users.find(user => user.id === userId)
+    const accuracyPercent = currentProfile.accuracyPercent
+    const killDeathRatio = currentProfile.killDeathRatio
+    const gamerTag = currentProfile.username
     return (
       <div className="centerDefault">
         <h3 className="pageHeading">My Profile</h3>

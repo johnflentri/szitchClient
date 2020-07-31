@@ -3,13 +3,11 @@ import { connect } from 'react-redux'
 import SignupForm from './SignUpForm'
 import LogInForm from './LogInForm'
 import Newsfeed from './Newsfeed'
-import Profile from './Profile'
 
 class Homepage extends Component {
   render() {
     if (this.props.user) {
       return <div>
-        <Profile />
         <Newsfeed />
       </div>
     } else
