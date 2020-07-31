@@ -13,10 +13,17 @@ const toolbar = props => (
       </div>
       <div className="toolbar__logo"><Link to={`/`}>Szitch</Link></div>
       <div className="spacer"></div>
+      <div className="searchForm">
+        <form>
+          <input type="text" id="filter" placeholder="Search..." />
+          <button>Go!</button>
+        </form>
+      </div>
+      <div className="spacer"></div>
       <div className="toolbar_navigation-items">
         <ul>
           <li><Link to={`/`}>Home</Link></li>
-          <li><Link to={`/userlist`}>1v1</Link></li>
+          <li><Link to={`/logout`}>LogOut</Link></li>
         </ul>
       </div>
     </nav>

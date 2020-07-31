@@ -20,6 +20,31 @@ body {
   padding: 1rem;
 }
 
+.eventDefault {
+  background-color: rgb(206, 206, 206);
+  width: 90%;
+  max-width: 40rem;
+  margin: 2rem auto;
+  border: 1.5px solid blue;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+/* .evenSplit {
+  display: flex;
+  justify-content: space-evenly;
+} */
+
+.smallRecommend {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.searchForm {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .pageHeading {
   text-align: center;
   color: blue;
@@ -41,28 +66,4 @@ body {
   background-color: rgb(189, 189, 255);
   border-radius: 5px;
   transform: translateY(3px);
-}
-
-.commentContent {
-  width: 89%;
-  height: 40px;
-  border-radius: 5px;
-  border: 1px solid #999999;
-  padding: 5px;
-}
-
-.postTitle {
-  width: 89%;
-  height: 10px;
-  border-radius: 5px;
-  border: 1px solid #999999;
-  padding: 5px;
-}
-
-.postContent {
-  width: 89%;
-  height: 60px;
-  border-radius: 5px;
-  border: 1px solid #999999;
-  padding: 5px;
 }

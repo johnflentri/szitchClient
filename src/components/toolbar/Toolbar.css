@@ -1,10 +1,10 @@
 .toolbar {
-  position: fixed;
+  position: static;
   opacity: 1;
   top: 0;
   left: 0;
   width: 100%;
-  height: 56px;
+  height: 76px;
 }
 
 .toolbar__navigation {
@@ -33,6 +33,14 @@
   margin: 0;
   padding: 0;
   display: flex;
+}
+
+.page_navigation-items ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .toolbar_navigation-items li {
