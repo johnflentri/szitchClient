@@ -14,11 +14,13 @@ class Profile extends Component {
       return <div>Loading...</div>
     }
 
-    const userId = parseInt(this.props.match.params.id)
+    const userId = parseInt(this.props.currentUser.user.id)
     const currentProfile = this.props.currentUser.users.find(user => user.id === userId)
     const accuracyPercent = currentProfile.accuracyPercent
     const killDeathRatio = currentProfile.killDeathRatio
     const gamerTag = currentProfile.username
+    const overallRank = currentProfile.overallRank
+
     return (
       <div className="centerDefault">
         <div className="page_navigation-items">
@@ -30,11 +32,15 @@ class Profile extends Component {
             <li><Link to={`/streams`}>Streams</Link></li>
           </ul>
         </div>
-        <h3 className="pageHeading">My Profile</h3>
-        <p>Gamertag: {gamerTag}</p>
-        <p>Accuracy: {accuracyPercent}%</p>
-        <p>KDR: {killDeathRatio}</p>
-        <UserList />
+        <h3 className="pageHeading">Profile</h3>
+        <div className="centerDefault">
+          <img style={{ height: "200px", width: "200px" }} src={currentProfile.avatarURL} alt="User Avatar" />
+          <p>{gamerTag}</p>
+          <p>Overall Rank: {overallRank}/{this.props.currentUser.users.length}</p>
+          <p>Accuracy: {accuracyPercent}%</p>
+          <p>K/D Ratio: {killDeathRatio}</p>
+        </div>
+        <UserList currentProfileAvatar={currentProfile.avatarURL} gamerTagVs={gamerTag} accuracyPercentVs={accuracyPercent} killDeathRatioVs={killDeathRatio} params={this.props.match.params.id} overallRankVs={overallRank} />
       </div>
     );
   }
