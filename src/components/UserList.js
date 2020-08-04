@@ -70,6 +70,12 @@ class UserList extends Component {
         <p className="centerSimple">{killDeathRatioComparison()}</p>
         <div className="centerDefault">
           <p className="pageHeading">Click to compare!</p>
+          <div className="searchForm">
+            <form>
+              <input type="text" id="filter" placeholder="Search..." />
+              <button>Go!</button>
+            </form>
+          </div>
           {mappedUsers}
         </div>
       </div>
