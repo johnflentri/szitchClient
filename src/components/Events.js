@@ -1,14 +1,18 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
-import { getCurrentUser } from "../actions";
+import { getCurrentUser, getEvents } from "../actions";
 import { connect } from "react-redux";
 
 class Events extends Component {
   componentDidMount() {
     this.props.getCurrentUser()
+    this.props.getEvents()
   }
 
   render() {
+    if (!this.props.events) {
+      return <div>Loading...</div>
+    }
     return (
       <div className="centerDefault">
         <div className="page_navigation-items">
@@ -33,7 +37,7 @@ class Events extends Component {
           Local Tournaments
       </h3>
         <div className="eventEligible">
-          <a target="_blank" href="https://dreamhack.com/masters/schedule/" rel="noopener noreferrer">DreamHack Masters Summer 2020 - North America</a>
+          <li><Link to={`/event/${this.props.events[0].id}`}>ESL Cologne - Europe 2020</Link></li>
         </div>
         <div className="eventEligible">
           <a target="_blank" href="https://dreamhack.com/masters/schedule/" rel="noopener noreferrer">DreamHack Open Summer 2020 - Europe</a>
@@ -126,9 +130,10 @@ class Events extends Component {
 
 const mapStateToProps = state => ({
   currentUser: state.user.currentUser,
+  events: state.event
 });
 
-const mapDispatchToProps = { getCurrentUser };
+const mapDispatchToProps = { getCurrentUser, getEvents };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Events);
 
