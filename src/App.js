@@ -11,6 +11,7 @@ import Events from './components/Events';
 import Matches from './components/Matches';
 import Streams from './components/Streams';
 import EventDetails from './components/EventDetails'
+import Questions from './components/Questions';
 
 class App extends Component {
   state = {
@@ -47,6 +48,7 @@ class App extends Component {
           <Route path='/matches' component={Matches} />
           <Route path='/streams' component={Streams} />
           <Route path='/event/:id' component={EventDetails} />
+          <Route path='/questions' component={Questions} />
         </main>
       </div>
     )

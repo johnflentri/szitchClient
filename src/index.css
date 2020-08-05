@@ -20,6 +20,17 @@ body {
   padding: 1rem;
 }
 
+.centerButton {
+  display: flex;
+  justify-content: space-evenly;
+  color: blue;
+  background-color: lightgrey;
+  margin: 2rem auto;
+  border: 1.5px solid blue;
+  border-radius: 10px;
+  max-width: 5rem;
+}
+
 .centerSimple {
   display: flex;
   justify-content: space-evenly;
