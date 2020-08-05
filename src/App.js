@@ -10,6 +10,7 @@ import LogoutSuccess from './components/LogoutSuccess';
 import Events from './components/Events';
 import Matches from './components/Matches';
 import Streams from './components/Streams';
+import EventDetails from './components/EventDetails'
 
 class App extends Component {
   state = {
@@ -45,6 +46,7 @@ class App extends Component {
           <Route path='/events' component={Events} />
           <Route path='/matches' component={Matches} />
           <Route path='/streams' component={Streams} />
+          <Route path='/event/:id' component={EventDetails} />
         </main>
       </div>
     )

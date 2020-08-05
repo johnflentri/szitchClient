@@ -4,6 +4,8 @@ import request from 'superagent'
 export const LOGGED_IN = "LOGGED_IN"
 export const CURRENT_USER = 'CURRENT_USER'
 export const USER_PROFILES = 'USER_PROFILES'
+export const GET_EVENTS = 'GET_EVENTS'
+export const GET_EVENT_DETAILS = 'GET_EVENT_DETAILS'
 
 export const baseUrl = 'http://localhost:4000'
 
@@ -66,4 +68,40 @@ export const getUserProfiles = () => (dispatch, getState) => {
       })
       .catch(console.error)
   }
+}
+
+function allEvents(payload) {
+  return {
+    type: GET_EVENTS,
+    payload
+  }
+}
+
+export const getEvents = () => (dispatch, getState) => {
+  const state = getState()
+  const { event } = state
+  if (!event.length) {
+    request(`${baseUrl}/event`)
+      .then(response => {
+        const action = allEvents(response.body)
+        dispatch(action)
+      })
+      .catch(console.error)
+  }
+}
+
+function allEventDetails(payload) {
+  return {
+    type: GET_EVENT_DETAILS,
+    payload
+  }
+}
+
+export const getEventDetails = (id) => (dispatch) => {
+  request(`${baseUrl}/event/${id}`)
+    .then(response => {
+      const action = allEventDetails(response.body)
+      dispatch(action)
+    })
+    .catch(console.error)
 }
