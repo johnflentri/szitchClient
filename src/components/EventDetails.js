@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux";
 import { getEvents } from '../actions'
+import { Link } from "react-router-dom";
 
 class EventDetails extends Component {
   componentDidMount() {
@@ -10,12 +11,15 @@ class EventDetails extends Component {
   render() {
     const thisEvent = this.props.events.find(event => event.id === parseInt(this.props.match.params.id))
     return (
-      <div className="pageHeading">
-        <img src={thisEvent.logo} alt="Event Logo" />
-        <p>{thisEvent.organisation}</p>
-        <p>{thisEvent.eventName}</p>
-        <p>{thisEvent.region}</p>
-        <p>{thisEvent.date}</p>
+      <div className="centerDefault">
+        <div className="pageHeading">
+          <img src={thisEvent.logo} alt="Event Logo" />
+          <h4>{thisEvent.organisation} {thisEvent.eventName} - {thisEvent.region}</h4>
+          <p>{thisEvent.date}</p>
+          <p>17 Teams have confirmed their place in this event - <Link>browse competitors!</Link></p>
+          <p style={{ color: "green" }}>3 places left!</p>
+          <button className="pageHeading" >JOIN</button>
+        </div>
       </div>
     )
   }

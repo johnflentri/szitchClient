@@ -20,6 +20,17 @@ class Profile extends Component {
     const killDeathRatio = currentProfile.killDeathRatio
     const gamerTag = currentProfile.username
     const overallRank = currentProfile.overallRank
+    let protential = currentProfile.protential
+    const bio = currentProfile.bio
+    const averageDamagePerRound = currentProfile.averageDamagePerRound
+
+    if (protential === "A+" || protential === "A") {
+      protential = <span style={{ color: "green" }}>{protential}</span>
+    } else if (protential === "B+" || protential === "B" || protential === "B-") {
+      protential = <span style={{ color: "gold" }}>{protential}</span>
+    } else {
+      protential = <span style={{ color: "blue" }}>{protential}</span>
+    }
 
     return (
       <div className="centerDefault">
@@ -34,13 +45,36 @@ class Profile extends Component {
         </div>
         <h3 className="pageHeading">Profile</h3>
         <div className="centerDefault">
-          <img style={{ height: "200px", width: "200px" }} src={currentProfile.avatarURL} alt="User Avatar" />
-          <p>{gamerTag}</p>
-          <p>Overall Rank: {overallRank}/{this.props.currentUser.users.length}</p>
-          <p>Accuracy: {accuracyPercent}%</p>
-          <p>K/D Ratio: {killDeathRatio}</p>
+          <div className="container">
+            <div className="item">
+              <img style={{ height: "200px", width: "200px" }} src={currentProfile.avatarURL} alt="User Avatar" />
+            </div>
+            <div className="item">
+              <h3 className="pageHeading" style={{ textAlign: "center" }}>{gamerTag}</h3>
+              <p style={{ textAlign: "center" }}>{bio}</p>
+              <p style={{ textAlign: "center" }}>Overall Rank: {overallRank}/{this.props.currentUser.users.length}</p>
+              <h4 style={{ textAlign: "center" }}>Protential: {protential}</h4>
+            </div>
+          </div>
+          <h4 className="pageHeading">Game Data</h4>
+          <div className="container">
+            <p>Accuracy: {accuracyPercent}%</p>
+            <p>K/D Ratio: {killDeathRatio}</p>
+            <p>ADR: {averageDamagePerRound}</p>
+          </div>
+          <h4 className="pageHeading">Strengths</h4>
+          <div className="container">
+            <div>
+              <p>Reflex speed: 0.225s</p>
+              <p>Mouse control: Top 10%</p>
+            </div>
+            <div>
+              <p>Abstract Thinking: Top 15%</p>
+              <p>Communication: Top 10%</p>
+            </div>
+          </div>
         </div>
-        <UserList currentProfileAvatar={currentProfile.avatarURL} gamerTagVs={gamerTag} accuracyPercentVs={accuracyPercent} killDeathRatioVs={killDeathRatio} params={this.props.match.params.id} overallRankVs={overallRank} />
+        <UserList currentProfileAvatar={currentProfile.avatarURL} gamerTagVs={gamerTag} accuracyPercentVs={accuracyPercent} killDeathRatioVs={killDeathRatio} params={this.props.match.params.id} averageDamagePerRoundVs={averageDamagePerRound} overallRankVs={overallRank} />
       </div>
     );
   }

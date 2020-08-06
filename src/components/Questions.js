@@ -50,7 +50,7 @@ export default class Questions extends Component {
           <p><input type="checkbox" id="myCheck" onclick="myFunction()"></input>Overwatch</p>
         </div>
         <div>
-          <h5 className="centerButton">Submit</h5>
+          <button className="centerButton">Submit</button>
         </div>
       </div>
     )

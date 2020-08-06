@@ -57,6 +57,16 @@ class UserList extends Component {
       }
     }
 
+    const averageDamagePerRoundComparison = () => {
+      if (parseFloat(findUser.averageDamagePerRound) < parseFloat(this.props.averageDamagePerRoundVs)) {
+        return <p><span style={{ color: "green" }}>{this.props.averageDamagePerRoundVs}</span> ADR <span style={{ color: "red" }}>{findUser.averageDamagePerRound}</span></p>
+      } else if (parseFloat(findUser.averageDamagePerRound) > parseFloat(this.props.averageDamagePerRoundVs)) {
+        return <p><span style={{ color: "red" }}>{this.props.averageDamagePerRoundVs}</span> ADR <span style={{ color: "green" }}>{findUser.averageDamagePerRound}</span></p>
+      } else {
+        return <p><span style={{ color: "green" }}>{this.props.averageDamagePerRoundVs}</span> ADR <span style={{ color: "green" }}>{findUser.averageDamagePerRound}</span></p>
+      }
+    }
+
     return (
       <div className="centerDefault">
         <h3 className="pageHeading">1v1</h3>
@@ -68,6 +78,7 @@ class UserList extends Component {
         <p className="centerSimple">{overallRankComparison()}</p>
         <p className="centerSimple">{accuracyComparison()}</p>
         <p className="centerSimple">{killDeathRatioComparison()}</p>
+        <p className="centerSimple">{averageDamagePerRoundComparison()}</p>
         <div className="centerDefault">
           <p className="pageHeading">Click to compare!</p>
           <div className="searchForm">
