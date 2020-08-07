@@ -51,16 +51,16 @@ class Profile extends Component {
             </div>
             <div className="item">
               <h3 className="pageHeading" style={{ textAlign: "center" }}>{gamerTag}</h3>
-              <p style={{ textAlign: "center" }}>{bio}</p>
-              <p style={{ textAlign: "center" }}>Overall Rank: {overallRank}/{this.props.currentUser.users.length}</p>
+              <p style={{ textAlign: "center" }}>"{bio}"</p>
+              <h4 style={{ textAlign: "center" }}>Overall Rank: {overallRank}/{this.props.currentUser.users.length}</h4>
               <h4 style={{ textAlign: "center" }}>Protential: {protential}</h4>
             </div>
           </div>
           <h4 className="pageHeading">Game Data</h4>
           <div className="container">
             <p>Accuracy: {accuracyPercent}%</p>
-            <p>K/D Ratio: {killDeathRatio}</p>
-            <p>ADR: {averageDamagePerRound}</p>
+            <p>Kill/Death Ratio: {killDeathRatio}</p>
+            <p>Average Damage per Round: {averageDamagePerRound}</p>
           </div>
           <h4 className="pageHeading">Strengths</h4>
           <div className="container">

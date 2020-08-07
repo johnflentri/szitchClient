@@ -49,21 +49,21 @@ class UserList extends Component {
 
     const killDeathRatioComparison = () => {
       if (parseFloat(findUser.killDeathRatio) < parseFloat(this.props.killDeathRatioVs)) {
-        return <p><span style={{ color: "green" }}>{this.props.killDeathRatioVs}</span> K/D Ratio <span style={{ color: "red" }}>{findUser.killDeathRatio}</span></p>
+        return <p><span style={{ color: "green" }}>{this.props.killDeathRatioVs}</span> Kill/Death Ratio <span style={{ color: "red" }}>{findUser.killDeathRatio}</span></p>
       } else if (parseFloat(findUser.killDeathRatio) > parseFloat(this.props.killDeathRatioVs)) {
-        return <p><span style={{ color: "red" }}>{this.props.killDeathRatioVs}</span> K/D Ratio <span style={{ color: "green" }}>{findUser.killDeathRatio}</span></p>
+        return <p><span style={{ color: "red" }}>{this.props.killDeathRatioVs}</span> Kill/Death Ratio <span style={{ color: "green" }}>{findUser.killDeathRatio}</span></p>
       } else {
-        return <p><span style={{ color: "green" }}>{this.props.killDeathRatioVs}</span> K/D Ratio <span style={{ color: "green" }}>{findUser.killDeathRatio}</span></p>
+        return <p><span style={{ color: "green" }}>{this.props.killDeathRatioVs}</span> Kill/Death Ratio <span style={{ color: "green" }}>{findUser.killDeathRatio}</span></p>
       }
     }
 
     const averageDamagePerRoundComparison = () => {
       if (parseFloat(findUser.averageDamagePerRound) < parseFloat(this.props.averageDamagePerRoundVs)) {
-        return <p><span style={{ color: "green" }}>{this.props.averageDamagePerRoundVs}</span> ADR <span style={{ color: "red" }}>{findUser.averageDamagePerRound}</span></p>
+        return <p><span style={{ color: "green" }}>{this.props.averageDamagePerRoundVs}</span> Average Damage per Round <span style={{ color: "red" }}>{findUser.averageDamagePerRound}</span></p>
       } else if (parseFloat(findUser.averageDamagePerRound) > parseFloat(this.props.averageDamagePerRoundVs)) {
-        return <p><span style={{ color: "red" }}>{this.props.averageDamagePerRoundVs}</span> ADR <span style={{ color: "green" }}>{findUser.averageDamagePerRound}</span></p>
+        return <p><span style={{ color: "red" }}>{this.props.averageDamagePerRoundVs}</span> Average Damage per Round <span style={{ color: "green" }}>{findUser.averageDamagePerRound}</span></p>
       } else {
-        return <p><span style={{ color: "green" }}>{this.props.averageDamagePerRoundVs}</span> ADR <span style={{ color: "green" }}>{findUser.averageDamagePerRound}</span></p>
+        return <p><span style={{ color: "green" }}>{this.props.averageDamagePerRoundVs}</span> Average Damage per Round <span style={{ color: "green" }}>{findUser.averageDamagePerRound}</span></p>
       }
     }
 
