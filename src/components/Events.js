@@ -21,7 +21,7 @@ class Events extends Component {
             <li><Link to={`/user/${this.props.currentUser.user.id}`}>Profile</Link></li>
             <li><Link to={`/events`}>Events</Link></li>
             <li><Link to={`/matches`}>Matches</Link></li>
-            <li><Link to={`/streams`}>Streams</Link></li>
+            <li><Link to={`/friends`}>Friends</Link></li>
           </ul>
         </div>
         <h3 className="pageHeading">

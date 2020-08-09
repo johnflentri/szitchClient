@@ -9,7 +9,7 @@ import Backdrop from './components/Backdrop/Backdrop'
 import LogoutSuccess from './components/LogoutSuccess';
 import Events from './components/Events';
 import Matches from './components/Matches';
-import Streams from './components/Streams';
+import Friends from './components/Friends';
 import EventDetails from './components/EventDetails'
 import Questions from './components/Questions';
 
@@ -46,7 +46,7 @@ class App extends Component {
           <Route path='/logout' component={LogoutSuccess} />
           <Route path='/events' component={Events} />
           <Route path='/matches' component={Matches} />
-          <Route path='/streams' component={Streams} />
+          <Route path='/friends' component={Friends} />
           <Route path='/event/:id' component={EventDetails} />
           <Route path='/questions' component={Questions} />
         </main>

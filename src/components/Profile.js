@@ -40,7 +40,7 @@ class Profile extends Component {
             <li><Link to={`/user/${this.props.currentUser.user.id}`}>Profile</Link></li>
             <li><Link to={`/events`}>Events</Link></li>
             <li><Link to={`/matches`}>Matches</Link></li>
-            <li><Link to={`/streams`}>Streams</Link></li>
+            <li><Link to={`/friends`}>Friends</Link></li>
           </ul>
         </div>
         <h3 className="pageHeading">Profile</h3>
@@ -73,6 +73,18 @@ class Profile extends Component {
               <p>Communication: Top 10%</p>
             </div>
           </div>
+        </div>
+        <div className="centerDefault">
+          <h4 className="pageHeading">Team</h4>
+          <h5 className="pageHeading">CoolestTeamEver</h5>
+          <div className="container">
+            <p>Player 1</p>
+            <p>Player 2</p>
+            <p>Player 3</p>
+            <p>Player 4</p>
+            <p>Player 5</p>
+          </div>
+          <p className="pageHeading">Game scheduled today at 19:00 CEST</p>
         </div>
         <UserList currentProfileAvatar={currentProfile.avatarURL} gamerTagVs={gamerTag} accuracyPercentVs={accuracyPercent} killDeathRatioVs={killDeathRatio} params={this.props.match.params.id} averageDamagePerRoundVs={averageDamagePerRound} overallRankVs={overallRank} />
       </div>
