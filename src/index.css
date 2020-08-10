@@ -25,6 +25,14 @@ body {
   padding: 1rem;
 }
 
+.centerNewsfeed {
+  background-color: white;
+  max-width: 40rem;
+  border: 1.5px solid blue;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
 /* .centerGold {
   background-color: rgba(255, 255, 255, 0.418);
   width: 90%;

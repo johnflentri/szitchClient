@@ -79,8 +79,8 @@ class UserList extends Component {
         <p className="centerSimple">{accuracyComparison()}</p>
         <p className="centerSimple">{killDeathRatioComparison()}</p>
         <p className="centerSimple">{averageDamagePerRoundComparison()}</p>
-        <div className="centerDefault">
-          <p className="pageHeading">Click to compare!</p>
+        <div>
+          <br />
           <div className="searchForm">
             <form>
               <input type="text" id="filter" placeholder="Search..." />

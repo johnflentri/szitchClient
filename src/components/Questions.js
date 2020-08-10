@@ -54,6 +54,11 @@ export default class Questions extends Component {
           <p><input type="checkbox" id="myCheck" onclick="myFunction()"></input>Yes</p>
           <p><input type="checkbox" id="myCheck" onclick="myFunction()"></input>No</p>
         </div>
+        <div className="centerDefault">
+          <h4 className="pageHeading">Which team member do you prefer?</h4>
+          <p><input type="checkbox" id="myCheck" onclick="myFunction()"></input>Similar skill and good communication</p>
+          <p><input type="checkbox" id="myCheck" onclick="myFunction()"></input>Toxic but will carry you</p>
+        </div>
         <div>
           <button className="centerButton">Submit</button>
         </div>

@@ -11,7 +11,12 @@ import profileIcon3 from '../images/profileIcon3.png'
 import profileIcon4 from '../images/profileIcon4.jpg'
 import profileIcon5 from '../images/profileIcon5.png'
 import profileIcon6 from '../images/profileIcon6.jpg'
-import dust2smokes from '../images/dust2smokes.jpg'
+import trending1 from '../images/trending1.jpg'
+import trending2 from '../images/trending2.jpeg'
+import trending3 from '../images/trending3.jpg'
+import team1 from '../images/team1.png'
+import team2 from '../images/team2.jpg'
+import team3 from '../images/team3.png'
 
 class Newsfeed extends Component {
   componentDidMount() {
@@ -34,37 +39,84 @@ class Newsfeed extends Component {
           </ul>
         </div>
         <h3 className="pageHeading">Explore</h3>
-        <p>Trending content for you - <Link>Click here for more!</Link></p>
+        <p className="pageHeading">Trending content for you - <Link>more</Link></p>
         {/* <ReactPlayer
           url="https://www.youtube.com/watch?v=XDCja2ckJCg"
         /> */}
-        <img src={dust2smokes} alt="dust2smokes"
-          width={'100%'}
-          height={'100%'} />
-        <br />
-        <p>Recommended gamers for you - <Link>Click here for more!</Link></p>
-        <div className="smallRecommend">
-          <img src={profileIcon1} alt="userRecommend1"
-            width={'25%'}
-            height={'25%'} />
-          <img src={profileIcon2} alt="userRecommend2"
-            width={'25%'}
-            height={'25%'} />
-          <img src={profileIcon3} alt="userRecommend3"
-            width={'25%'}
-            height={'25%'} />
+        <div>
+          <img src={trending1} alt="trending1"
+            width={'100%'}
+            height={'100%'} />
+          <img src={trending2} alt="trending2"
+            width={'50%'}
+            height={'50%'} />
+          <img src={trending3} alt="trending3"
+            width={'50%'}
+            height={'50%'} />
         </div>
-        <p>Rising talent near you - <Link>Click here for more!</Link></p>
-        <div className="smallRecommend">
-          <img src={profileIcon4} alt="userRecommend4"
-            width={'25%'}
-            height={'25%'} />
-          <img src={profileIcon5} alt="userRecommend5"
-            width={'25%'}
-            height={'25%'} />
-          <img src={profileIcon6} alt="userRecommend6"
-            width={'25%'}
-            height={'25%'} />
+        <br />
+        <br />
+        <p className="pageHeading">Popular gamers for you - <Link>more</Link></p>
+        <div className="container">
+          <div >
+            <img src={profileIcon1} alt="userRecommend1"
+              width={'100%'}
+              height={'85%'}></img>
+            <p style={{ textAlign: "center" }}>Player X</p>
+          </div>
+          <div >
+            <img src={profileIcon2} alt="userRecommend2"
+              width={'100%'}
+              height={'85%'}></img>
+            <p style={{ textAlign: "center" }}>Player X</p>
+          </div>
+          <div >
+            <img src={profileIcon3} alt="userRecommend3"
+              width={'100%'}
+              height={'85%'}></img>
+            <p style={{ textAlign: "center" }}>Player X</p>
+          </div>
+        </div>
+        <br />
+        <p className="pageHeading">Recommended players near you - <Link>more</Link></p>
+        <div className="container">
+          <div >
+            <img src={profileIcon4} alt="userRecommend4"
+              width={'100%'}
+              height={'85%'} />
+            <p style={{ textAlign: "center" }}>Player X</p>
+          </div>
+          <div >
+            <img src={profileIcon5} alt="userRecommend5"
+              width={'100%'}
+              height={'85%'} />
+            <p style={{ textAlign: "center" }}>Player X</p>
+          </div>
+          <div >
+            <img src={profileIcon6} alt="userRecommend6"
+              width={'100%'}
+              height={'85%'} />
+            <p style={{ textAlign: "center" }}>Player X</p>
+          </div>
+        </div>
+        <br />
+        <p className="pageHeading">29 Teams currently looking for a player - <Link>more</Link></p>
+        <div className="container">
+          <div >
+            <img src={team1} alt="team1"
+              width={'100%'}
+              height={'85%'} />
+          </div>
+          <div >
+            <img src={team2} alt="team2"
+              width={'100%'}
+              height={'85%'} />
+          </div>
+          <div >
+            <img src={team3} alt="team3"
+              width={'100%'}
+              height={'85%'} />
+          </div>
         </div>
       </div>
     )
