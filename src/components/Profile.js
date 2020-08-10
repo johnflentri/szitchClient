@@ -89,7 +89,7 @@ class Profile extends Component {
           </div>
           <div className="centerDefault">
             <h4 className="pageHeading">Team</h4>
-            <h5 className="pageHeading"><Link>CoolestTeamEver</Link></h5>
+            <h5 className="pageHeading"><Link>TEAM NAME</Link></h5>
             <div className="container">
               <p>Player 1</p>
               <p>Player 2</p>

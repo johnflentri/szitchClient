@@ -17,6 +17,7 @@ import trending3 from '../images/trending3.jpg'
 import team1 from '../images/team1.png'
 import team2 from '../images/team2.jpg'
 import team3 from '../images/team3.png'
+import Questions from './Questions';
 
 class Newsfeed extends Component {
   componentDidMount() {
@@ -26,6 +27,10 @@ class Newsfeed extends Component {
   render() {
     if (!this.props.currentUser) {
       return <div>Loading...</div>
+    } else if (this.props.currentUser.user.newPlayer === true) {
+      return (
+        <Questions />
+      )
     }
     return (
       <div className="centerDefault">
@@ -62,19 +67,19 @@ class Newsfeed extends Component {
             <img src={profileIcon1} alt="userRecommend1"
               width={'100%'}
               height={'85%'}></img>
-            <p style={{ textAlign: "center" }}>Player X</p>
+            <p style={{ textAlign: "center" }}>Player A</p>
           </div>
           <div >
             <img src={profileIcon2} alt="userRecommend2"
               width={'100%'}
               height={'85%'}></img>
-            <p style={{ textAlign: "center" }}>Player X</p>
+            <p style={{ textAlign: "center" }}>Player B</p>
           </div>
           <div >
             <img src={profileIcon3} alt="userRecommend3"
               width={'100%'}
               height={'85%'}></img>
-            <p style={{ textAlign: "center" }}>Player X</p>
+            <p style={{ textAlign: "center" }}>Player C</p>
           </div>
         </div>
         <br />
@@ -84,19 +89,19 @@ class Newsfeed extends Component {
             <img src={profileIcon4} alt="userRecommend4"
               width={'100%'}
               height={'85%'} />
-            <p style={{ textAlign: "center" }}>Player X</p>
+            <p style={{ textAlign: "center" }}>Player D</p>
           </div>
           <div >
             <img src={profileIcon5} alt="userRecommend5"
               width={'100%'}
               height={'85%'} />
-            <p style={{ textAlign: "center" }}>Player X</p>
+            <p style={{ textAlign: "center" }}>Player E</p>
           </div>
           <div >
             <img src={profileIcon6} alt="userRecommend6"
               width={'100%'}
               height={'85%'} />
-            <p style={{ textAlign: "center" }}>Player X</p>
+            <p style={{ textAlign: "center" }}>Player F</p>
           </div>
         </div>
         <br />

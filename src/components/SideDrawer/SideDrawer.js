@@ -11,7 +11,8 @@ const sideDrawer = props => {
   }
   return (<nav className={drawerClasses}>
     <ul>
-      <li><Link to={`/logout`}>LogOut</Link></li>
+      <li><Link to={`/notifications`}>Notifications</Link></li>
+      <li><Link to={`/logout`}>Account</Link></li>
     </ul>
   </nav>)
 }

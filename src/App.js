@@ -12,6 +12,7 @@ import Matches from './components/Matches';
 import Friends from './components/Friends';
 import EventDetails from './components/EventDetails'
 import Questions from './components/Questions';
+import Notifications from './components/Notifications';
 
 class App extends Component {
   state = {
@@ -49,6 +50,7 @@ class App extends Component {
           <Route path='/friends' component={Friends} />
           <Route path='/event/:id' component={EventDetails} />
           <Route path='/questions' component={Questions} />
+          <Route path='/notifications' component={Notifications} />
         </main>
       </div>
     )

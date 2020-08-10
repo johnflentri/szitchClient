@@ -23,7 +23,7 @@ class Friends extends Component {
         <h3 className="pageHeading">Friends</h3>
         <div className="centerDefault">
           <h4 className="pageHeading">Team Maker</h4>
-          <h5 className="pageHeading">CoolestTeamEver</h5>
+          <h5 className="pageHeading">TEAM NAME</h5>
           <div className="container">
             <p style={{ color: "blue" }}>{this.props.currentUser.user.username}</p>
             <p>Player 2</p>
@@ -46,9 +46,9 @@ class Friends extends Component {
             </form>
           </div>
           <br />
-          <p>Player X (available 19:00-21:00) <button style={{ color: "blue" }}>invite</button></p>
-          <p>Player X (available 18:00-18:45) <button style={{ color: "blue" }}>invite</button></p>
-          <p>Player X (available 16:00-20:00) <button style={{ color: "blue" }}>invite</button></p>
+          <p>Player G (available 19:00-21:00) <button style={{ color: "blue" }}>invite</button></p>
+          <p>Player H (available 18:00-18:45) <button style={{ color: "blue" }}>invite</button></p>
+          <p>Player I (available 16:00-20:00) <button style={{ color: "blue" }}>invite</button></p>
         </div>
         <div className="centerDefault">
           <h4 className="pageHeading">All</h4>
@@ -58,12 +58,12 @@ class Friends extends Component {
               <button>Go!</button>
             </form>
           </div>
-          <p>Player X <button style={{ color: "blue" }}>invite</button></p>
-          <p>Player X <button style={{ color: "blue" }}>invite</button></p>
-          <p>Player X <button style={{ color: "blue" }}>invite</button></p>
-          <p>Player X <button style={{ color: "blue" }}>invite</button></p>
-          <p>Player X <button style={{ color: "blue" }}>invite</button></p>
-          <p>Player X <button style={{ color: "blue" }}>invite</button></p>
+          <p>Player J <button style={{ color: "blue" }}>invite</button></p>
+          <p>Player K <button style={{ color: "blue" }}>invite</button></p>
+          <p>Player L <button style={{ color: "blue" }}>invite</button></p>
+          <p>Player M <button style={{ color: "blue" }}>invite</button></p>
+          <p>Player N <button style={{ color: "blue" }}>invite</button></p>
+          <p>Player O <button style={{ color: "blue" }}>invite</button></p>
         </div>
         <div className="centerDefault">
           <h4 className="pageHeading">Mutual connections</h4>
@@ -73,10 +73,10 @@ class Friends extends Component {
               <button>Go!</button>
             </form>
           </div>
-          <p>Player X <button style={{ color: "blue" }}>add</button></p>
-          <p>Player X <button style={{ color: "blue" }}>add</button></p>
-          <p>Player X <button style={{ color: "blue" }}>add</button></p>
-          <p>Player X <button style={{ color: "blue" }}>add</button></p>
+          <p>Player P <button style={{ color: "blue" }}>add</button></p>
+          <p>Player Q <button style={{ color: "blue" }}>add</button></p>
+          <p>Player R <button style={{ color: "blue" }}>add</button></p>
+          <p>Player S <button style={{ color: "blue" }}>add</button></p>
         </div>
       </div>
     )
