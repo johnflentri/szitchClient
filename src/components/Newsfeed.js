@@ -18,6 +18,11 @@ import team1 from '../images/team1.png'
 import team2 from '../images/team2.jpg'
 import team3 from '../images/team3.png'
 import Questions from './Questions';
+import news1 from '../images/news1.jpg'
+import news2 from '../images/news2.jpg'
+import news3 from '../images/news3.jpg'
+import arrowL from '../images/arrowL.png'
+import arrowR from '../images/arrowR.png'
 
 class Newsfeed extends Component {
   componentDidMount() {
@@ -44,6 +49,26 @@ class Newsfeed extends Component {
           </ul>
         </div>
         <h3 className="pageHeading">Explore</h3>
+        {/* <p className="pageHeading">Latest news - <Link>more</Link></p>
+        <div className="container">
+          <img src={arrowL} alt="arrowL"
+            width={'5%'}
+            height={'50%'} />
+          <img src={news1} alt="news1"
+            width={'25%'}
+            height={'25%'} />
+          <img src={news2} alt="news2"
+            width={'40%'}
+            height={'40%'} />
+          <img src={news3} alt="news3"
+            width={'25%'}
+            height={'25%'} />
+          <img src={arrowR} alt="arrowR"
+            width={'5%'}
+            height={'50%'} />
+        </div> */}
+        {/* <br />
+        <br /> */}
         <p className="pageHeading">Trending content for you - <Link>more</Link></p>
         {/* <ReactPlayer
           url="https://www.youtube.com/watch?v=XDCja2ckJCg"
@@ -105,7 +130,7 @@ class Newsfeed extends Component {
           </div>
         </div>
         <br />
-        <p className="pageHeading">29 Teams currently looking for a player - <Link>more</Link></p>
+        <p className="pageHeading">29 Teams looking for a player matching your skills - <Link>more</Link></p>
         <div className="container">
           <div >
             <img src={team1} alt="team1"

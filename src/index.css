@@ -33,15 +33,14 @@ body {
   padding: 1rem;
 }
 
-/* .centerGold {
-  background-color: rgba(255, 255, 255, 0.418);
-  width: 90%;
-  max-width: 40rem;
-  margin: 2rem auto;
-  border: 1.5px solid gold;
+.feedbackText {
+  width: 600px;
+  height: 50px;
+  border-radius: 5px;
+  border: 1.5px solid blue;
   border-radius: 10px;
   padding: 1rem;
-} */
+}
 
 .centerButton {
   display: flex;
