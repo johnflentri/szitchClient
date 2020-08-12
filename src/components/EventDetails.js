@@ -14,8 +14,17 @@ class EventDetails extends Component {
       <div className="centerDefault">
         <div className="pageHeading">
           <img src={thisEvent.logo} alt="Event Logo" />
-          <h4>{thisEvent.organisation} {thisEvent.eventName} - {thisEvent.region}</h4>
-          <p>{thisEvent.date}</p>
+          <h4>{thisEvent.organisation}</h4>
+          <div className="container">
+            <p>{thisEvent.eventName}</p>
+            <p>{thisEvent.date}</p>
+          </div>
+          <h5 className="pageHeading">Prize pool</h5>
+          <div className="container">
+            <p>1st - {thisEvent.prize1}</p>
+            <p>2nd - {thisEvent.prize2}</p>
+            <p>3rd - {thisEvent.prize3}</p>
+          </div>
           <p>17 Teams have confirmed their place in this event - <Link>browse competitors!</Link></p>
           <p style={{ color: "green" }}>3 places left!</p>
           <button className="pageHeading" >JOIN</button>

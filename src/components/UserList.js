@@ -29,11 +29,11 @@ class UserList extends Component {
 
     const overallRankComparison = () => {
       if (parseFloat(findUser.overallRank) > parseFloat(this.props.overallRankVs)) {
-        return <p><span style={{ color: "green" }}>{this.props.overallRankVs}/{this.props.userList.length}</span> Overall Rank <span style={{ color: "red" }}>{findUser.overallRank}/{this.props.userList.length}</span></p>
+        return <p><span style={{ color: "green" }}>{this.props.overallRankVs}/{this.props.userList.length}</span> Szitch Rank <span style={{ color: "red" }}>{findUser.overallRank}/{this.props.userList.length}</span></p>
       } else if (parseFloat(findUser.overallRank) < parseFloat(this.props.overallRankVs)) {
-        return <p><span style={{ color: "red" }}>{this.props.overallRankVs}/{this.props.userList.length}</span> Overall Rank <span style={{ color: "green" }}>{findUser.overallRank}/{this.props.userList.length}</span></p>
+        return <p><span style={{ color: "red" }}>{this.props.overallRankVs}/{this.props.userList.length}</span> Szitch Rank <span style={{ color: "green" }}>{findUser.overallRank}/{this.props.userList.length}</span></p>
       } else {
-        return <p><span style={{ color: "green" }}>{this.props.overallRankVs}/{this.props.userList.length}</span> Overall Rank <span style={{ color: "green" }}>{findUser.overallRank}/{this.props.userList.length}</span></p>
+        return <p><span style={{ color: "green" }}>{this.props.overallRankVs}/{this.props.userList.length}</span> Szitch Rank <span style={{ color: "green" }}>{findUser.overallRank}/{this.props.userList.length}</span></p>
       }
     }
 

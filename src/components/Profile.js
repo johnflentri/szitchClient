@@ -91,7 +91,7 @@ class Profile extends Component {
             <h4 className="pageHeading">Team</h4>
             <h5 className="pageHeading"><Link>TEAM NAME</Link></h5>
             <div className="container">
-              <p>Player 1</p>
+              <p style={{ color: "blue" }}>{currentProfile.username}</p>
               <p>Player 2</p>
               <p>Player 3</p>
               <p>Player 4</p>

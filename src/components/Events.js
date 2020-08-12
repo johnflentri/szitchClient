@@ -37,7 +37,7 @@ class Events extends Component {
           Local Tournaments
       </h3>
         <div className="eventEligible">
-          <li><Link to={`/event/${this.props.events[0].id}`}>ESL Cologne - Europe 2020</Link></li>
+          <li><Link to={`/event/${this.props.events[0].id}`}>Amsterdam Amateur League - Knockout Tournament</Link></li>
         </div>
         <div className="eventEligible">
           <a target="_blank" href="https://dreamhack.com/masters/schedule/" rel="noopener noreferrer">DreamHack Open Summer 2020 - Europe</a>
