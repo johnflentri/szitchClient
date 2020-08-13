@@ -7,6 +7,7 @@ export const USER_PROFILES = 'USER_PROFILES'
 export const GET_EVENTS = 'GET_EVENTS'
 export const GET_EVENT_DETAILS = 'GET_EVENT_DETAILS'
 export const GET_CONTENT = 'GET_CONTENT'
+export const GET_TEAMS = 'GET_TEAMS'
 
 export const baseUrl = 'http://localhost:4000'
 
@@ -121,6 +122,25 @@ export const getAllContent = () => (dispatch, getState) => {
     .set('Authorization', `Bearer ${user.jwt}`)
     .then(response => {
       const action = allContent(response.body)
+      dispatch(action)
+    })
+    .catch(console.error)
+}
+
+function allTeams(payload) {
+  return {
+    type: GET_TEAMS,
+    payload
+  }
+}
+
+export const getAllTeams = () => (dispatch, getState) => {
+  const state = getState()
+  const { user } = state
+  request(`${baseUrl}/teams`)
+    .set('Authorization', `Bearer ${user.jwt}`)
+    .then(response => {
+      const action = allTeams(response.body)
       dispatch(action)
     })
     .catch(console.error)

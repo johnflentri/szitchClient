@@ -3,22 +3,19 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 // import ReactPlayer from 'react-player'
 
-import { getCurrentUser, getAllContent } from "../actions";
+import { getCurrentUser, getAllContent, getAllTeams } from "../actions";
 
-import team1 from '../images/team1.png'
-import team2 from '../images/team2.jpg'
-import team3 from '../images/team3.png'
 import Questions from './Questions';
 
 class Newsfeed extends Component {
   componentDidMount() {
     this.props.getCurrentUser()
     this.props.getAllContent()
+    this.props.getAllTeams()
   }
 
   render() {
-    console.log("users?", this.props)
-    if (!this.props.currentUser) {
+    if (!this.props.currentUser || !this.props.allContent) {
       return <div>Loading...</div>
     } else if (this.props.currentUser.user.newPlayer === true) {
       return (
@@ -103,22 +100,26 @@ class Newsfeed extends Component {
           </div>
         </div>
         <br />
-        <p className="pageHeading">29 Teams looking for a player matching your skills - <Link>more</Link></p>
+        <p className="pageHeading">Teams looking for a player - <Link to={`/teams`}>more</Link></p>
         <div className="container">
           <div >
-            <img src={team1} alt="team1"
-              width={'100%'}
+            <img src={this.props.allTeams[0].teamLogo} alt="team1"
+              width={'175px'}
               height={'85%'} />
+            <p style={{ textAlign: "center" }}>{this.props.allTeams[0].teamName}</p>
           </div>
           <div >
-            <img src={team2} alt="team2"
-              width={'100%'}
+            <img src={this.props.allTeams[1].teamLogo} alt="team2"
+              width={'175px'}
               height={'85%'} />
+            <p style={{ textAlign: "center" }}>{this.props.allTeams[1].teamName}</p>
+
           </div>
           <div >
-            <img src={team3} alt="team3"
-              width={'100%'}
+            <img src={this.props.allTeams[2].teamLogo} alt="team3"
+              width={'175px'}
               height={'85%'} />
+            <p style={{ textAlign: "center" }}>{this.props.allTeams[2].teamName}</p>
           </div>
         </div>
       </div>
@@ -126,14 +127,13 @@ class Newsfeed extends Component {
   }
 }
 
-
-
 const mapStateToProps = state => ({
   currentUser: state.user.currentUser,
-  allContent: state.content
+  allContent: state.content,
+  allTeams: state.teams
 });
 
-const mapDispatchToProps = { getCurrentUser, getAllContent };
+const mapDispatchToProps = { getCurrentUser, getAllContent, getAllTeams };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Newsfeed);
 
