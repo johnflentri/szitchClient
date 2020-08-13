@@ -5,12 +5,6 @@ import { Link } from "react-router-dom";
 
 import { getCurrentUser, getAllContent } from "../actions";
 
-import profileIcon1 from '../images/profileIcon.svg'
-import profileIcon2 from '../images/profileIcon2.png'
-import profileIcon3 from '../images/profileIcon3.png'
-import profileIcon4 from '../images/profileIcon4.jpg'
-import profileIcon5 from '../images/profileIcon5.png'
-import profileIcon6 from '../images/profileIcon6.jpg'
 import team1 from '../images/team1.png'
 import team2 from '../images/team2.jpg'
 import team3 from '../images/team3.png'
@@ -23,7 +17,7 @@ class Newsfeed extends Component {
   }
 
   render() {
-    console.log("did it work?", this.props)
+    console.log("users?", this.props)
     if (!this.props.currentUser) {
       return <div>Loading...</div>
     } else if (this.props.currentUser.user.newPlayer === true) {
@@ -65,47 +59,47 @@ class Newsfeed extends Component {
         </div>
         <br />
         <br />
-        <p className="pageHeading">Popular gamers for you - <Link>more</Link></p>
+        <p className="pageHeading">Popular gamers for you - <Link to={`/popular`}>more</Link></p>
         <div className="container">
           <div >
-            <img src={profileIcon1} alt="userRecommend1"
-              width={'100%'}
+            <img src={this.props.currentUser.users[0].avatarURL} alt="userRecommend1"
+              width={'175px'}
               height={'85%'}></img>
-            <p style={{ textAlign: "center" }}>Player A</p>
+            <p style={{ textAlign: "center" }}>{this.props.currentUser.users[0].username}</p>
           </div>
           <div >
-            <img src={profileIcon2} alt="userRecommend2"
-              width={'100%'}
+            <img src={this.props.currentUser.users[1].avatarURL} alt="userRecommend2"
+              width={'175px'}
               height={'85%'}></img>
-            <p style={{ textAlign: "center" }}>Player B</p>
+            <p style={{ textAlign: "center" }}>{this.props.currentUser.users[1].username}</p>
           </div>
           <div >
-            <img src={profileIcon3} alt="userRecommend3"
-              width={'100%'}
+            <img src={this.props.currentUser.users[2].avatarURL} alt="userRecommend3"
+              width={'175px'}
               height={'85%'}></img>
-            <p style={{ textAlign: "center" }}>Player C</p>
+            <p style={{ textAlign: "center" }}>{this.props.currentUser.users[2].username}</p>
           </div>
         </div>
         <br />
-        <p className="pageHeading">Recommended players near you - <Link>more</Link></p>
+        <p className="pageHeading">Recommended players near you - <Link to={`/near`}>more</Link></p>
         <div className="container">
           <div >
-            <img src={profileIcon4} alt="userRecommend4"
-              width={'100%'}
+            <img src={this.props.currentUser.users[3].avatarURL} alt="userRecommend4"
+              width={'175px'}
               height={'85%'} />
-            <p style={{ textAlign: "center" }}>Player D</p>
+            <p style={{ textAlign: "center" }}>{this.props.currentUser.users[3].username}</p>
           </div>
           <div >
-            <img src={profileIcon5} alt="userRecommend5"
-              width={'100%'}
+            <img src={this.props.currentUser.users[4].avatarURL} alt="userRecommend5"
+              width={'175px'}
               height={'85%'} />
-            <p style={{ textAlign: "center" }}>Player E</p>
+            <p style={{ textAlign: "center" }}>{this.props.currentUser.users[4].username}</p>
           </div>
           <div >
-            <img src={profileIcon6} alt="userRecommend6"
-              width={'100%'}
+            <img src={this.props.currentUser.users[5].avatarURL} alt="userRecommend6"
+              width={'175px'}
               height={'85%'} />
-            <p style={{ textAlign: "center" }}>Player F</p>
+            <p style={{ textAlign: "center" }}>{this.props.currentUser.users[5].username}</p>
           </div>
         </div>
         <br />

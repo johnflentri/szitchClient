@@ -14,6 +14,8 @@ import EventDetails from './components/EventDetails'
 import Questions from './components/Questions';
 import Notifications from './components/Notifications';
 import Content from './components/Content';
+import GamersPopular from './components/GamersPopular';
+import GamersNear from './components/GamersNear';
 
 class App extends Component {
   state = {
@@ -53,6 +55,8 @@ class App extends Component {
           <Route path='/questions' component={Questions} />
           <Route path='/notifications' component={Notifications} />
           <Route path='/content' component={Content} />
+          <Route path='/popular' component={GamersPopular} />
+          <Route path='/near' component={GamersNear} />
         </main>
       </div>
     )

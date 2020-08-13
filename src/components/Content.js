@@ -12,7 +12,6 @@ class Content extends Component {
       </div>
     ))
 
-    console.log("state?", this.props)
     return (
       <div className="centerDefault">
         <h3 className="pageHeading">Content</h3>
