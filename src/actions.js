@@ -6,6 +6,7 @@ export const CURRENT_USER = 'CURRENT_USER'
 export const USER_PROFILES = 'USER_PROFILES'
 export const GET_EVENTS = 'GET_EVENTS'
 export const GET_EVENT_DETAILS = 'GET_EVENT_DETAILS'
+export const GET_CONTENT = 'GET_CONTENT'
 
 export const baseUrl = 'http://localhost:4000'
 
@@ -101,6 +102,25 @@ export const getEventDetails = (id) => (dispatch) => {
   request(`${baseUrl}/event/${id}`)
     .then(response => {
       const action = allEventDetails(response.body)
+      dispatch(action)
+    })
+    .catch(console.error)
+}
+
+function allContent(payload) {
+  return {
+    type: GET_CONTENT,
+    payload
+  }
+}
+
+export const getAllContent = () => (dispatch, getState) => {
+  const state = getState()
+  const { user } = state
+  request(`${baseUrl}/content`)
+    .set('Authorization', `Bearer ${user.jwt}`)
+    .then(response => {
+      const action = allContent(response.body)
       dispatch(action)
     })
     .catch(console.error)

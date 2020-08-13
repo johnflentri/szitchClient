@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 // import ReactPlayer from 'react-player'
 
-import { getCurrentUser } from "../actions";
+import { getCurrentUser, getAllContent } from "../actions";
 
 import profileIcon1 from '../images/profileIcon.svg'
 import profileIcon2 from '../images/profileIcon2.png'
@@ -11,25 +11,19 @@ import profileIcon3 from '../images/profileIcon3.png'
 import profileIcon4 from '../images/profileIcon4.jpg'
 import profileIcon5 from '../images/profileIcon5.png'
 import profileIcon6 from '../images/profileIcon6.jpg'
-import trending1 from '../images/trending1.jpg'
-import trending2 from '../images/trending2.jpeg'
-import trending3 from '../images/trending3.jpg'
 import team1 from '../images/team1.png'
 import team2 from '../images/team2.jpg'
 import team3 from '../images/team3.png'
 import Questions from './Questions';
-import news1 from '../images/news1.jpg'
-import news2 from '../images/news2.jpg'
-import news3 from '../images/news3.jpg'
-import arrowL from '../images/arrowL.png'
-import arrowR from '../images/arrowR.png'
 
 class Newsfeed extends Component {
   componentDidMount() {
     this.props.getCurrentUser()
+    this.props.getAllContent()
   }
 
   render() {
+    console.log("did it work?", this.props)
     if (!this.props.currentUser) {
       return <div>Loading...</div>
     } else if (this.props.currentUser.user.newPlayer === true) {
@@ -37,6 +31,11 @@ class Newsfeed extends Component {
         <Questions />
       )
     }
+
+    const trendingFirst = this.props.allContent[0]
+    const trendingSecond = this.props.allContent[1]
+    const trendingThird = this.props.allContent[2]
+
     return (
       <div className="centerDefault">
         <div className="page_navigation-items">
@@ -49,38 +48,18 @@ class Newsfeed extends Component {
           </ul>
         </div>
         <h3 className="pageHeading">Explore</h3>
-        {/* <p className="pageHeading">Latest news - <Link>more</Link></p>
-        <div className="container">
-          <img src={arrowL} alt="arrowL"
-            width={'5%'}
-            height={'50%'} />
-          <img src={news1} alt="news1"
-            width={'25%'}
-            height={'25%'} />
-          <img src={news2} alt="news2"
-            width={'40%'}
-            height={'40%'} />
-          <img src={news3} alt="news3"
-            width={'25%'}
-            height={'25%'} />
-          <img src={arrowR} alt="arrowR"
-            width={'5%'}
-            height={'50%'} />
-        </div> */}
-        {/* <br />
-        <br /> */}
-        <p className="pageHeading">Trending content for you - <Link>more</Link></p>
+        <p className="pageHeading">Trending content for you - <Link to={`/content`}>more</Link></p>
         {/* <ReactPlayer
           url="https://www.youtube.com/watch?v=XDCja2ckJCg"
         /> */}
         <div>
-          <img src={trending1} alt="trending1"
+          <img src={trendingFirst.img} alt="trending1"
             width={'100%'}
             height={'100%'} />
-          <img src={trending2} alt="trending2"
+          <img src={trendingSecond.img} alt="trending2"
             width={'50%'}
             height={'50%'} />
-          <img src={trending3} alt="trending3"
+          <img src={trendingThird.img} alt="trending3"
             width={'50%'}
             height={'50%'} />
         </div>
@@ -157,9 +136,10 @@ class Newsfeed extends Component {
 
 const mapStateToProps = state => ({
   currentUser: state.user.currentUser,
+  allContent: state.content
 });
 
-const mapDispatchToProps = { getCurrentUser };
+const mapDispatchToProps = { getCurrentUser, getAllContent };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Newsfeed);
 
