@@ -15,8 +15,8 @@ class Newsfeed extends Component {
   }
 
   render() {
-    if (!this.props.currentUser || !this.props.allContent) {
-      return <div>Loading...</div>
+    if (!this.props.currentUser || !this.props.allContent || !this.props.allTeams) {
+      return <div className="centerDefault"><p className="pageHeading">Loading...</p></div>
     } else if (this.props.currentUser.user.newPlayer === true) {
       return (
         <Questions />

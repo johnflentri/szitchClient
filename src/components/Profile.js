@@ -45,7 +45,7 @@ class Profile extends Component {
             </ul>
           </div>
           <h3 className="pageHeading">Profile</h3>
-          <div className="centerDefault">
+          <div>
             <div className="container">
               <div className="item">
                 <img style={{ height: "200px", width: "200px" }} src={currentProfile.avatarURL} alt="User Avatar" />
