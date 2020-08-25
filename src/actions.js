@@ -8,6 +8,7 @@ export const GET_EVENTS = 'GET_EVENTS'
 export const GET_EVENT_DETAILS = 'GET_EVENT_DETAILS'
 export const GET_CONTENT = 'GET_CONTENT'
 export const GET_TEAMS = 'GET_TEAMS'
+export const CHANGE_USER_AVATAR = 'CHANGE_USER_AVATAR'
 
 export const baseUrl = 'http://localhost:4000'
 
@@ -141,6 +142,27 @@ export const getAllTeams = () => (dispatch, getState) => {
     .set('Authorization', `Bearer ${user.jwt}`)
     .then(response => {
       const action = allTeams(response.body)
+      dispatch(action)
+    })
+    .catch(console.error)
+}
+
+function changeUserAvatar(payload) {
+  return {
+    type: CHANGE_USER_AVATAR,
+    payload
+  }
+}
+
+export const changeAvatar = (avatarURL, id) => (dispatch, getState) => {
+  const state = getState()
+  const { user } = state
+  request
+    .put(`${baseUrl}/user/${id}`)
+    .set('Authorization', `Bearer ${user.jwt}`)
+    .send(avatarURL)
+    .then(response => {
+      const action = changeUserAvatar(response.body)
       dispatch(action)
     })
     .catch(console.error)

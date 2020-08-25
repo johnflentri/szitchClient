@@ -1,10 +1,37 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux";
-import { getCurrentUser } from "../actions";
+import { getCurrentUser, changeAvatar } from "../actions";
 import { Link } from "react-router-dom";
 import UserList from './UserList';
 
 class Profile extends Component {
+  state = {
+    selectedFile: null
+  }
+
+  fileSelectedHandler = event => {
+    console.log("what happened this event?", event.target.files[0])
+    this.setState({
+      selectedFile: event.target.files[0]
+    })
+  }
+
+  // fileUploadHandler = async () => {
+  //   const newAvatarURL = this.state.selectedFile.name
+  //   // const currentUserId = this.props.currentUser.user.id
+  //   fetch(`http://localhost:4000/user/1`, {
+  //     method: 'PUT',
+  //     body: newAvatarURL
+  //   })
+  //     .then(response => response.json())
+  //     .then(result => {
+  //       console.log('Success:', result);
+  //     })
+  //     .catch(error => {
+  //       console.error('Error:', error);
+  //     });
+  // }
+
   componentDidMount() {
     this.props.getCurrentUser()
   }
@@ -45,6 +72,12 @@ class Profile extends Component {
             </ul>
           </div>
           <h3 className="pageHeading">Profile</h3>
+
+          <div>
+            <input type="file" onChange={this.fileSelectedHandler} />
+            <button onClick={this.fileUploadHandler}>Upload</button>
+          </div>
+
           <div>
             <div className="container">
               <div className="item">
@@ -110,6 +143,6 @@ const mapStateToProps = state => ({
   currentUser: state.user.currentUser,
 });
 
-const mapDispatchToProps = { getCurrentUser };
+const mapDispatchToProps = { getCurrentUser, changeAvatar };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);
